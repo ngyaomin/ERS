@@ -1,6 +1,12 @@
+<div class="margin_left">
+  <h1> Edit your Comments </h1>
+</div>
+
 <div class="padding_left">
   <%= form_for([@post, @comment]) do |f| %>
-    <%= f.text_field :commenter %><br>
+    <p>Commenter</p>
+    <%= f.text_field :commenter %>
+    <p>Comments</p>
     <%= f.text_area :body %><br>
     <%= f.submit %>
   <% end %>
