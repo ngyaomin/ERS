@@ -53,7 +53,7 @@ def destroy
     flash[:notice] = "You do not own this Post!"
   end
   redirect_to posts_path
-end
+    end
 
 
   private
