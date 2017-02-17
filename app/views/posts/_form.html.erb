@@ -1,39 +1,39 @@
 <div class="padding_left">
-<%= form_for @post do |f| %>
+  <%= form_for @post do |f| %>
 
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@post.errors.count, "error") %> prohibited
-        this Emergency from being saved:
-      </h2>
-      <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@post.errors.count, "error") %> prohibited
+          this Emergency from being saved:
+        </h2>
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p>
+      <%= f.label :subject %><br>
+      <%= f.text_field :subject %>
+    </p>
+
+    <p>
+      <%= f.label :categories %><br>
+      <%= f.select :categories, ['Health', 'Natural Disaster', 'Terrorist']%>
+    </p>
+
+    <p>
+      <%= f.label :content %><br>
+      <%= f.text_area :content %>
+    </p>
+
+
+    <p>
+      <%= f.submit %>
+    </p>
+
   <% end %>
-
-  <p>
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
-  </p>
-
-  <p>
-    <%= f.label :categories %><br>
-    <%= f.select :categories, ['Health', 'Natural Disaster', 'Terrorist']%>
-  </p>
-
-  <p>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </p>
-
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
 </div>
