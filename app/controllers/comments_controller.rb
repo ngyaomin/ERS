@@ -7,7 +7,7 @@ end
 
 def destroy
   @post = Post.find(params[:post_id])
-  @comment = current_user.@post.comments.find(params[:id])
+  @comment = @post.comments.find(params[:id])
   @comment.destroy
   redirect_to post_path(@post)
 end
