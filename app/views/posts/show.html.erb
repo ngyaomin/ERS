@@ -15,12 +15,14 @@
 </p>
 
 <h2>Comments</h2>
-  <% @post.comments.each do |f| %>
-  <p>
-  Commenter: <%= f.commenter %>
-  </p>
-  <p>Comment: <%= f.body %>
-  </p>
+  <% @comments.each do |f| %>
+  <p>Commenter:</p>
+  <%= f.commenter %>
+
+  <p>Content:</p>
+  <%= f.body %>
+
+  <%= link_to 'edit comment', edit_post_comment_path(@post, f) %>
   <% end %>
 
 

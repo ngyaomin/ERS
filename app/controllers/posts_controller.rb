@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = @post.comments.build
+    @comments = @post.comments.all
   end
 
   def new
@@ -58,6 +59,9 @@ end
   private
   def post_params
     params.require(:post).permit(:subject, :categories, :content)
+  end
+  def comment_params
+    params.require(:comment).permit(:commenter, :body)
   end
 
 end

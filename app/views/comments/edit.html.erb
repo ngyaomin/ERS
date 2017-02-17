@@ -1,0 +1,7 @@
+<div class="padding_left">
+  <%= form_for([@post, @comment]) do |f| %>
+    <%= f.text_field :commenter %><br>
+    <%= f.text_area :body %><br>
+    <%= f.submit %>
+  <% end %>
+</div>
