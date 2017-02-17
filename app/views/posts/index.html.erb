@@ -12,6 +12,7 @@
       <td><%= post.subject %></td>
       <td><%= post.created_at.strftime("%b %d, %Y")%></td>
       <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
     </tr>
   <% end %>
 </table>
