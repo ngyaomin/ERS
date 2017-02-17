@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi this is an emergency reporting website
 
-Things you may want to cover:
+If emergency is going on please call the authorities else you can proceed
 
-* Ruby version
+Click on emergencies reporting to enter main page to see list of reports
 
-* System dependencies
+You can view the reports, but in order to edit, post, or comment, you will need to log in.
 
-* Configuration
+Logging in to comment is to prevent spammers.
 
-* Database creation
+to create a new report please click New emergencies bottom left of the list.
 
-* Database initialization
+You will need to fill in all fields. As reporting might be urgeent i did not put in any more validation.
 
-* How to run the test suite
+To show report content and details click show
 
-* Services (job queues, cache servers, search engines, etc.)
+To edit click edit (you will need to be the owner of the post)
 
-* Deployment instructions
+To delete click destroy (you will need to be the owner of the post)
 
-* ...
