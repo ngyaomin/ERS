@@ -1,28 +1,28 @@
 
+<div class="center_title">
 <h1>Emergencies reports</h1>
+</div>
 
-<table>
-  <tr>
-    <th>subject</th>
-    <th>Time Posted</th>
-    <th>Reporter</th>
-  </tr>
+<div class="padding_left">
+<%= link_to 'New Emergency', new_post_path %>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %> <br><br>
 
   <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.subject %></td>
-      <td><%= post.created_at.strftime("%b %d, %Y %I:%M %p")%></td>
-      <td><%= post.user.email %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post_path(post),
+
+      Subject: <%= post.subject %> <br>
+      Time Posted: <%= post.created_at.strftime("%b %d, %Y %I:%M %p")%> <br>
+      Reporter: <%= post.user.email %> <br>
+      <%= link_to 'Show', post_path(post) %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Destroy', post_path(post),
          method: :delete,
-         data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+         data: { confirm: 'Are you sure?' } %> <br>
+         <br>
+
   <% end %>
-</table>
+
 <br>
 <%= link_to 'New Emergency', new_post_path %>
-
-
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+</div>
