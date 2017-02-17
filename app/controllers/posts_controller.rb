@@ -5,10 +5,15 @@ class PostsController < ApplicationController
 
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     @post.save
     redirect_to @post
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:subject, :categories, :content)
   end
 
 end

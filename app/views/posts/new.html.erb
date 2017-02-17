@@ -1,7 +1,8 @@
 <h1>Posts your emergencies here</h1>
 
 
-<%= form_for :post url: posts_path do |f| %>
+
+<%= form_for :post, url: posts_path do |f| %>
   <p>
     <%= f.label :subject %><br>
     <%= f.text_field :subject %>
@@ -21,4 +22,5 @@
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>
