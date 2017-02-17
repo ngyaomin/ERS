@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-  def new
+  def show
+  @post = Post.find(params[:id])
   end
 
-
+  def new
+  end
 
   def create
     @post = Post.new(post_params)
