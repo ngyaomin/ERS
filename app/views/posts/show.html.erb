@@ -1,40 +1,38 @@
-<h1>Post details</h1>
 <div class="margin_left">
-  <p>
-    <strong>Subject:</strong>
-    <%= @post.subject %>
-  </p>
+<p>
+  <strong>Subject:</strong>
+  <%= @post.subject %>
+</p>
 
-  <p>
-    <strong>categories:</strong>
-    <%= @post.categories %>
-  </p>
+<p>
+  <strong>categories:</strong>
+  <%= @post.categories %>
+</p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= @post.content %>
-  </p>
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
 
-  <h2>Comments</h2>
-    <% @comments.each do |f| %>
-      Commenter:
-      <%= f.commenter %><br>
+<h2>Comments</h2>
+  <% @comments.each do |f| %>
+    Commenter:
+    <%= f.commenter %><br>
 
-      Comments:<br>
-      <%= f.body %><br>
+    Comments:<br>
+    <%= f.body %><br>
 
-      <%= link_to 'edit comment', edit_post_comment_path(@post, f) %><br><br>
-      <%= link_to 'Destroy', post_comment_path,
-         method: :delete,
-         data: { confirm: 'Are you sure?' } %>
-
-    <% end %>
+    <%= link_to 'edit comment', edit_post_comment_path(@post, f) %><br><br>
+  <% end %>
 
 
-  <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
 
 
-  <br>
-    <%= link_to 'Back', posts_path %>
+
+
+
+<br>
+<%= link_to 'Back', posts_path %>
 </div>
