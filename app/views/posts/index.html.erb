@@ -1,0 +1,17 @@
+
+<h1>Emergencies reports</h1>
+
+<table>
+  <tr>
+    <th>subject</th>
+    <th>Time Posted</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.subject %></td>
+      <td><%= post.created_at.strftime("%b %d, %Y")%></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
