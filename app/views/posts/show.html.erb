@@ -27,6 +27,9 @@
     <%= f.body %><br>
 
     <%= link_to 'edit comment', edit_post_comment_path(@post, f) %><br><br>
+    <%= link_to 'delete comment', post_comment_path(@post, f),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %> <br>
   <% end %>
 
 
