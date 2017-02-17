@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = @post.comments.build
   end
 
   def new
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -37,7 +38,7 @@ class PostsController < ApplicationController
   @post = Post.find(params[:id])
 
   if @post.update(post_params)
-    redirect_to @post
+    redirect_to post_path(@post)
   else
     render 'edit'
   end
