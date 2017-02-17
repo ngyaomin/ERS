@@ -15,8 +15,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if current_user == @post.user
-      @post.find
+    if current_user != @post.user
+      flash[:notice] = "You do not own this Post!"
+      redirect_to posts_path
     end
   end
 
@@ -46,6 +47,8 @@ def destroy
   @post = Post.find(params[:id])
   if current_user == @post.user
     @post.destroy
+  else
+    flash[:notice] = "You do not own this Post!"
   end
   redirect_to posts_path
 end
