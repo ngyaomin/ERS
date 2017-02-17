@@ -25,6 +25,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if current_user == @comment.user
       @comment.destroy
+    else
+      flash[:notice] = "You do not own this Post!"
     end
     redirect_to post_path(@post)
   end
